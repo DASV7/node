@@ -1,3 +1,8 @@
+para correr el proyeto :
+npm run start
+
+
+
 ##npm commands
 --npm init
 --npm install express nodemon
