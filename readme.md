@@ -1,6 +1,7 @@
-para correr el proyeto :
+for run this proyect :
 --npm run start
 
+Create BY: DIego alejandro sepulveda Velez
 
 
 ##npm commands execute
