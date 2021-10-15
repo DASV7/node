@@ -1,12 +1,13 @@
 const express = require('express');
+const user = require('../models/user');
 const router = express.Router();
-const user = require("../models/user");
+
 
 //create user
 router.post('/', async (req, res) => {
     const User = new user({
         user: req.body.user,
-        password: req.body. password
+        password: req.body.password
     });
     try {
         const savedJson = await User.save();
@@ -19,7 +20,7 @@ router.post('/', async (req, res) => {
 router.get("/:postId", async (req, res) => {
     console.log(req.params.postId);
     try {
-        const postIdJson = await post.findById(req.params.postId)
+        const postIdJson = await post.find(req.params.postId)
         res.json(postIdJson);
     } catch (err) {
         res.json({ message: err });
@@ -27,17 +28,24 @@ router.get("/:postId", async (req, res) => {
 
 })
 
-//Login whith get
-/*router.post("/", async (req, res) => {
-    const findUserByRequest = await new user({
-        user: req.body.user,
-        password: req.body.password
-    });
+// LOGIN
+router.post('/login', async (req, res) => {
+    // validate login
+    const body = req.body;
+    const usuarioDB = await user.findOne({ user: body.user });
+    if (!usuarioDB) {
+        return res.status(400).json({
+            mensaje: 'Usuario! o contraseña inválidos',
+        });
+    }
+    // validate de password 
+    const validPassword = await user.findOne({ password: body.password })
+    if (!validPassword) return res.status(400).json({ error: 'Constraseña invalida' })
 
-
-
-
+    res.json({
+        error: null,
+        data: 'bienvenido'
+    })
 })
-*/
 
 module.exports = router;
