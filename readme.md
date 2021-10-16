@@ -4,7 +4,7 @@ for run this proyect :
 Create BY: DIego alejandro sepulveda Velez
 
 
-##npm commands execute
+##npm commands execute and use
 --npm init
 --npm install express nodemon
 --npm install mongoose
