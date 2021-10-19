@@ -10,14 +10,10 @@ app.use(bodyParser.json());
 
 //import routes
 const postsRoutes = require('./routes/posts');
-app.use('/posts', postsRoutes);
+app.use('/api/posts', postsRoutes);
 
 const usersRoutes = require('./routes/users');
-app.use('/users', usersRoutes);
-//routes
-app.get('/', (req, res) => {
-    res.send('simon quiere baba');
-})
+app.use('/api/users', usersRoutes);
 
 //database Connect
 const user = 'dasvv';
@@ -31,4 +27,5 @@ mongoose.connect(uri,
 
 
 //server
-app.listen(3000);
+var port = process.env.PORT || 3000;
+app.listen(port);
