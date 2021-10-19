@@ -1,8 +1,8 @@
-for run this proyect :
---npm run start
+Run this proyect :
+npm run start
 
-Create BY: DIego alejandro sepulveda Velez
-
+Create BY: Diego alejandro sepulveda Velez
+Contact: dasvv7@gmail.com
 
 ##npm commands execute and use
 --npm init
