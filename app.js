@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
+//json web token
+
 //meddlewares
 app.use(cors());
 app.use(bodyParser.json());
